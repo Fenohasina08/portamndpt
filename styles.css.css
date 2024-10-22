@@ -1,4 +1,19 @@
  /* Base styles */
+ /* Style pour les éléments à animer */
+/* Style pour les éléments à animer */
+.fade-in {
+  opacity: 0;  /* Les éléments commencent invisibles */
+  transform: translateY(20px); /* Déplacement léger vers le bas */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Animation */
+}
+
+/* Quand l'élément est visible (animation déclenchée) */
+.fade-in-visible {
+  opacity: 1;  /* L'élément devient visible */
+  transform: translateY(0); /* Il revient à sa place originale */
+}
+
+
  @media screen and (min-width: 1024px){
 body {
   font-family: Arial, sans-serif;
@@ -184,10 +199,12 @@ body {
   justify-content: space-between;
   gap: 20px; /* Espace entre les sections */
 }
-
+.dev p{
+  margin-left: -5px;
+}
 .section {
   flex: 1; /* Chaque section prend un espace égal */
-  padding: 10px;
+  padding: 1px;
   background-color: #f4f4f4; /* Couleur de fond des sections */
   border-radius: 5px; /* Bords arrondis */
 }
@@ -267,7 +284,7 @@ p {
 .useful-links a {
   text-decoration: none;
   color: white; /* Couleur des liens */
-  margin-left: -70px;
+  margin-left: -2px;
 }
 
 .useful-links a:hover {
@@ -366,7 +383,7 @@ p {
   color: #1AB798;
   font-size: 42px;
   text-align: center;
-  margin-top: 100px; /* Ajustement pour éviter le chevauchement avec le header */
+  margin-top: 2px; /* Ajustement pour éviter le chevauchement avec le header */
 }
 
 .biographie h2 {
@@ -390,8 +407,9 @@ p {
 
 .bio-image img {
   width: 100%;
-  max-width: 370px;
+  max-width: 570px;
   height: auto;
+  background-size: cover;
 }
 
 .partenaires-photo {
@@ -423,6 +441,9 @@ p {
 }
 .container h2{
   margin-left: -5px;
+}
+.mot-ministre p{
+margin-left: -20px;
 }
 /* Footer */
 .footer {
@@ -482,5 +503,79 @@ p {
   margin-bottom: 20px;
   margin-inline: 30px;
   border-radius: 5px;
+}
+.footer {
+  background-color:#1AB798 ;
+  color: #fff;
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer-columns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style pour l'adresse Antsiranana en haut */
+.footer .address-antsiranana {
+  order: -1; /* Place cette colonne en haut */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Organisation des autres colonnes */
+.footer .address-fianarantsoa .address-mahajanga.address-toliara .address-toamasina {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.footer .column {
+  flex: 1 1 30%; /* Chaque colonne prendra environ 30% de la largeur */
+  min-width: 200px;
+  padding: 10px;
+}
+
+.footer .address h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Styles pour les petits écrans */
+@media screen and (max-width: 768px) {
+  .footer .other-addresses {
+      flex-direction: column; /* Les colonnes s'empilent sur les petits écrans */
+      align-items: center;
+  }
+
+  .footer .column {
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+  }
+
+  .footer p, .footer h4 {
+      font-size: 14px;
+  }
+}
+.useful-links a{
+  color: white;
+  text-decoration: none;
+}
+.useful-links a:hover {
+  color: rgba(0, 0, 0, 0.46);
 }
 }
